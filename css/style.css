@@ -1,0 +1,117 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
+* {
+   --verylightgary: #dededeff;
+   --veryred: #ff3030ff;
+   --jet: #2a2a2aff;
+   --veryblue: #00a3dfff;
+   --veryviolet: #9000a9ff;
+   font-family: 'Aldrich', sans-serif; 
+   background-color: var(--jet);
+   color: var(--verylightgary);
+   box-sizing: border-box;
+}
+
+body {
+   max-width: 1200px;
+   margin: auto;
+   display: grid;
+   grid-template-columns: 20% 80%;
+   grid-template-rows: 120px auto 120px;
+   grid-template-areas: 
+   "header header "
+   "nav main "
+   "footer footer ";
+}
+
+h1 {
+   color: var(--veryred);
+}
+
+header,
+nav,
+main,
+footer {
+   border: 1px solid var(--verylightgary);
+   padding: 10px 10px 10px 10px;
+   min-height: 100px;
+}
+
+header {
+   grid-area: header;
+}
+
+nav {
+   grid-area: nav;
+}
+
+main {
+   grid-area: main;
+}
+
+footer {
+   grid-area: footer;
+}
+
+hr {
+   border: 2px solid var(--veryviolet);
+   background-color: var(--veryviolet);
+}
+
+article {
+   border: 1px solid var(--verylightgary);
+   margin-bottom: 10px;
+   overflow: hidden;
+}
+
+article img {
+   float: right;
+   margin: 10px 10px 10px 10px;
+}
+
+nav ul li a {
+   text-decoration: underline;
+   color: var(--veryred);
+}
+
+nav ul li a:hover {
+   text-decoration: underline;
+   font-weight: bolder;
+   color: var(--veryred);
+}
+
+nav ul{
+   list-style: none;
+   margin-top: 5px;
+   margin-left: 0px;
+   padding-left: 0px;
+}
+
+nav ul li {
+   text-align: left;
+}
+
+@media screen and (max-width: 600px) {
+   body {
+       grid-template-columns: 100%;
+       grid-template-rows: 100px auto auto auto 100px;
+       grid-template-areas: 
+       "header"
+       "nav"
+       "main"
+       "aside"
+       "footer";
+   }
+
+   nav ul {
+       display: flex;
+       flex-direction: row;  
+      flex-wrap: nowrap;   
+      justify-content: left;
+   }
+
+   nav ul li {
+       width: 1fr;
+       margin-right: 20px;
+   }
+}
