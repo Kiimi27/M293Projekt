@@ -51,6 +51,7 @@ main {
 
 footer {
    grid-area: footer;
+   text-align: center;
 }
 
 hr {
@@ -62,6 +63,7 @@ article {
    border: 1px solid var(--verylightgary);
    margin-bottom: 10px;
    overflow: hidden;
+   padding-left: 5px;
 }
 
 article img {
@@ -69,29 +71,29 @@ article img {
    margin: 10px 10px 10px 10px;
 }
 
-nav ul li a {
+a {
    text-decoration: underline;
    color: var(--veryred);
 }
 
-nav ul li a:hover {
+a:hover {
    text-decoration: underline;
    font-weight: bolder;
    color: var(--veryred);
 }
 
-nav ul{
+nav div ul{
    list-style: none;
    margin-top: 5px;
    margin-left: 0px;
    padding-left: 0px;
 }
 
-nav ul li {
+nav div ul li {
    text-align: left;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 674px) {
    body {
        grid-template-columns: 100%;
        grid-template-rows: 100px auto auto auto 100px;
@@ -103,15 +105,76 @@ nav ul li {
        "footer";
    }
 
-   nav ul {
+   nav {
+      display: flex;
+      flex-direction: column;  
+     flex-wrap: nowrap;   
+     justify-content: left;
+  }
+
+  nav div {
+   width: auto;
+   height: auto;
+   }
+
+   header {
+      height: 200px;
+   }
+
+   nav div ul {
        display: flex;
        flex-direction: row;  
       flex-wrap: nowrap;   
       justify-content: left;
    }
 
-   nav ul li {
-       width: 1fr;
+   nav div ul li {
+       width: auto;
+       margin-right: 20px;
+   }
+}
+
+@media screen and (min-width: 675px) and (max-width: 1200px) {
+   body {
+       grid-template-columns: 100%;
+       grid-template-rows: 100px auto auto auto 100px;
+       grid-template-areas: 
+       "header"
+       "nav"
+       "main"
+       "aside"
+       "footer";
+   }
+
+   nav {
+      display: flex;
+      flex-direction: row;  
+     flex-wrap: nowrap;   
+     justify-content: left;
+  }
+
+  nav div {
+   width: auto;
+   margin-top: 20px;
+   }
+
+   header {
+      height: 200px;
+   }
+
+   #navdiv2 {
+      margin-left: 10px;
+   }
+
+   nav div ul {
+       display: flex;
+       flex-direction: row;  
+      flex-wrap: nowrap;   
+      justify-content: left;
+   }
+
+   nav div ul li {
+       width: auto;
        margin-right: 20px;
    }
 }
